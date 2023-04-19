@@ -363,7 +363,6 @@ class VisualSentiment(object):
         from matplotlib.font_manager import FontProperties
 
         font_path = '/home/aistudio/PaddleNLP-develop/applications/sentiment_analysis/unified_sentiment_extraction/fonts/SimHei.ttf'
-        font_prop = FontProperties(fname=font_path)
     
         if not aspect_sentiment:
             raise ValueError("aspect_sentiment is empty, please check it.")
@@ -413,7 +412,7 @@ class VisualSentiment(object):
             plt.title("The histogram of aspect/sentiment")
             plt.xlabel("aspect")
             plt.ylabel("sentiment frequency")
-            # plt.xticks(x_pos, aspects)
+            font_prop = FontProperties(fname=font_path)
             plt.xticks(x_pos, aspects, fontproperties=font_prop)
             plt.legend()
             plt.savefig(save_path)
